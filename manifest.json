@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "TroublesomeExpansion",
+  "version": "1.0.0",
+  "description": "ハッカソン用の拡張機能です。",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": "popup16.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://xxxxxxx.com/*"],
+      "css": ["style.css"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": [
+    "https://example.com/*",
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["resource1.js", "resource2.css"],
+      "matches": ["https://example.com/*"]
+    }
+  ]
+}
