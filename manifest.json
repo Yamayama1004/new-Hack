@@ -6,8 +6,8 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab","startup","tabs"],
+  "permissions": ["activeTab","tabs"],
   "background":{
-    "service_woker": "background.js"
+    "service_worker": "background.js"
   }
 }
