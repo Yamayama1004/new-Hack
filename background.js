@@ -1,8 +1,6 @@
 const API_KEY = "AIzaSyBMxCRIyqgsKwRg6XUsQ_MmYBBLlQHs2rc"
 const searchTerm = "作業用BGM"
 chrome.runtime.onStartup.addListener(() => {
-  const apiUrl = 'https://www.googleapis.com/youtube/v3/search?part=id&key=${apiKey}&q=${encodeURIComponent(searchTerm)}&type=video&maxResults=10';
-
   chrome.tabs.create({
     url: youtubeUrl,
     active: false
