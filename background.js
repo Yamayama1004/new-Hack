@@ -1,18 +1,12 @@
 const API_KEY = "AIzaSyBMxCRIyqgsKwRg6XUsQ_MmYBBLlQHs2rc"
 const searchTerm = "作業用BGM"
-chrome.runtime.onStartup.addListener(() => {
-  chrome.tabs.create({
-    url: youtubeUrl,
-    active: false
-  });
-});
 
 function initClient() {
   gapi.client.init({
     apiKey: API_KEY,
     discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
   }).then(() => {
-    searchVideos('作業用BGM');
+    searchVideos(searchTerm);
   }).catch(error => {
     console.error('APIクライアントの初期化エラー:', error);
   });
@@ -39,3 +33,10 @@ function searchVideos(query) {
     console.error('検索エラー:', error);
   });
 }
+
+chrome.runtime.onStartup.addListener(() => {
+  chrome.tabs.create({
+    url: youtubeUrl,
+    active: false
+  });
+});
