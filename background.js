@@ -1,5 +1,6 @@
-const API_KEY = "AIzaSyBMxCRIyqgsKwRg6XUsQ_MmYBBLlQHs2rc"
-const searchTerm = "作業用BGM"
+const API_KEY = "AIzaSyBMxCRIyqgsKwRg6XUsQ_MmYBBLlQHs2rc";
+const searchTerm = "作業用BGM";
+let youtubeUrl = null;
 
 function initClient() {
   gapi.client.init({
@@ -11,6 +12,7 @@ function initClient() {
     console.error('APIクライアントの初期化エラー:', error);
   });
 }
+
 function searchVideos(query) {
   gapi.client.youtube.search.list({
     part: 'id',
@@ -25,7 +27,8 @@ function searchVideos(query) {
       const randomIndex = Math.floor(Math.random() * videoIds.length);
       const randomVideoId = videoIds[randomIndex];
       console.log('ランダムに選択した動画ID:', randomVideoId);
-      youtubeUrl = `https://www.youtube.com/embed/${randomVideoId}`;
+      youtubeUrl = `https://www.youtube.com/watch?v=${randomVideoId}`;
+      createStartupTab();
     } else {
       console.log('検索結果が見つかりませんでした。');
     }
@@ -34,9 +37,15 @@ function searchVideos(query) {
   });
 }
 
-chrome.runtime.onStartup.addListener(() => {
-  chrome.tabs.create({
-    url: youtubeUrl,
-    active: false
+function createStartupTab(){
+  if (youtubeUrl){
+    chrome.tabs.create({
+      url: youtubeUrl,
+      active: false
   });
+  }
+}
+
+chrome.runtime.onStartup.addListener(() =>{
+  initClient();
 });
