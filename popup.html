@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>拡張機能</title>
-  <script src="popup.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Control</title>
+    <style>
+        body {
+            width: 200px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <h1>こんにちは！</h1>
-  <button id="myButton">クリック</button>
+    <h3>幽霊の出現</h3>
+    <button id="toggleGhosts">ON / OFF</button>
+
+    <script src="popup.js"></script>
 </body>
 </html>
