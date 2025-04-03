@@ -1,4 +1,3 @@
-const API_KEY = "AIzaSyBMxCRIyqgsKwRg6XUsQ_MmYBBLlQHs2rc";
 const searchTerm = "作業用BGM";
 let youtubeUrl = null;
 
