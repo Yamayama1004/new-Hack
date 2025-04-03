@@ -6,7 +6,7 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab","tabs","https://apis.google.com/*"],
+  "permissions": ["activeTab","tabs"],
   "background":{
     "service_worker": "background.js"
   },
