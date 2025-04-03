@@ -25,7 +25,7 @@ function searchVideos(accessToken) {
       const videoIds = data.items.map(item => item.id.videoId).filter(id => id);
       const randomIndex = Math.floor(Math.random() * videoIds.length);
       const randomVideoId = videoIds[randomIndex];
-      youtubeUrl = `https://www.youtube.com/watch?v=${randomVideoId}`;
+      youtubeUrl = "https://www.youtube.com/watch?v="+randomVideoId;
       chrome.tabs.create({url:youtubeUrl, active:false});
     } else {
       console.log('検索結果が見つかりませんでした。');
