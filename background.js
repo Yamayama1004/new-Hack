@@ -1,3 +1,6 @@
+import config from '.config.json';
+
+const API_KEY = config.youtubeApiKey;
 const searchTerm = "作業用BGM";
 let youtubeUrl = null;
 
@@ -12,7 +15,7 @@ function authenticateAndSearch(){
 }
 
 function searchVideos(accessToken) {
-  const url = `https://www.googleapis.com/youtube/v3/search?part=id&q=<span class="math-inline">\{encodeURIComponent\(searchTerm\)\}&maxResults\=3&type\=video&key\=</span>{API_KEY}`;
+  const url = "https://www.googleapis.com/youtube/v3/search?part=id&q="+encodeURIComponent(searchTerm)+"&maxResults=3&type=video&key="+API_KEY;
 
   fetch(url, {
     headers: {
