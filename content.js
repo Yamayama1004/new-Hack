@@ -21,11 +21,11 @@ function createGhost() {
   const ghostNumber = Math.floor(Math.random() * 4);
   ghost.src = ghostsImg[ghostNumber];
   ghost.className = "ghost";
-  ghost.style.position = "absolute";
+  ghost.style.position = "fixed";
   ghost.style.width = "48px";
   ghost.style.height = "48px";
   ghost.style.left = `${Math.random() * (window.innerWidth - 48)}px`;
-  ghost.style.top = `${window.innerHeight}px`;
+  ghost.style.top = `${window.innerHeight + 20}px`;
   document.body.appendChild(ghost);
 
   const speed = 2;
