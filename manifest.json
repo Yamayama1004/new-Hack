@@ -3,11 +3,19 @@
   "name": "My First Extension",
   "version": "1.0",
   "description": "これは簡単なChrome拡張機能です。",
-  "action": {
-    "default_popup": "popup.html"
-  },
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["storage", "tabs", "scripting"],
   "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/ghost1.png",
+      "48": "icons/ghost2.png",
+      "128": "icons/ghost3.png"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
