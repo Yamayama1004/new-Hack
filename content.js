@@ -12,9 +12,9 @@ document.addEventListener("keydown", function (event) {
 
     if (searchBox && document.activeElement === searchBox && event.key === "Enter") {
         event.preventDefault();
-        chrome.runtime.sendMessage({ action: "sendData", data: searchBox.value },(response) => {
-            console.log("Received response:", response);
+        chrome.runtime.sendMessage({ action: "sendData", data: searchBox.value }, (response) => {
+            searchBox.value = response.receivedData;
+            searchBox.dispatchEvent(enterEvent);
         });
-        searchBox.dispatchEvent(enterEvent);
     }
 });
