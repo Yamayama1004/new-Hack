@@ -3,10 +3,10 @@ let youtubeUrl = null;
 let apiKey = null;
 let startFlag = false;
 
-fetch('./config.json')
+fetch('./.env')
   .then(response => response.json())
   .then(config => {
-    apiKey = config.youtubeApiKey;
+    apiKey = youtubeApiKey;
   });
 
 
