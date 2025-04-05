@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                 contents: [
                     {
                         parts: [
-                            { text: `You are a search query optimizer. Convert the following natural language sentence into an effective Google search query. Remove filler words and focus on keywords that retrieve accurate results. User input: ${request.data}` }
+                            { text: `You are a search query optimizer. Your job is to read user input and output a single optimized Google search query as a space-separated list of keywords. Extract only meaningful words that yield relevant search results. Remove redundant words and focus on keywords that fetch precise results. And return them in the language they were typed in.User input: ${request.data}` }
                         ]
                     }
                 ]
