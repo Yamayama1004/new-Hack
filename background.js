@@ -29,6 +29,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             console.error("Error calling Gemini API", err);
             sendResponse({ reply: "Error occurred" });
         });
+        return true; 
     }
-    return true; 
 });
