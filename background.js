@@ -3,7 +3,6 @@ let youtubeUrl = null;
 let apiKey = null;
 let startFlag = false;
 
-fetch('./.env')
 function authenticateAndSearch() {
   chrome.identity.getAuthToken({ interactive: true }, function (token) {
     if (chrome.runtime.lastError) {
