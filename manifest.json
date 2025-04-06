@@ -19,14 +19,5 @@
     {"matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ],
-  "web_accessible_resources": [
-    {"resources":["onigiri.png"],
-      "matches":["<all_urls>"]
-    }
-  ],
-  "content_security_policy": {
-  "extension_pages": "default-src 'self' 'unsafe-eval'; script-src 'self' 'unsafe-eval'; connect-src *; img-src 'self' data:;",
-  "sandbox": "sandbox allow-scripts allow-forms"
-}
+  ]
 }

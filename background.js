@@ -4,12 +4,6 @@ let apiKey = null;
 let startFlag = false;
 
 fetch('./.env')
-  .then(response => response.json())
-  .then(config => {
-    apiKey = youtubeApiKey;
-  });
-
-
 function authenticateAndSearch() {
   chrome.identity.getAuthToken({ interactive: true }, function (token) {
     if (chrome.runtime.lastError) {
