@@ -1,7 +1,7 @@
 
-let apiKey = "";
+let GenimiApiKey = "";
 
-const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GenimiApiKey}`;
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === "sendData") {
@@ -36,7 +36,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 const searchTerm = "作業用BGM";
 let youtubeUrl = null;
-let apiKey = "AIzaSyAvYJppug132sbTgz4o6Zzf8kg5Iph9p7E";
+let YoutubeApiKey = "";
 let startFlag = false;
 
 function authenticateAndSearch() {
@@ -45,7 +45,7 @@ function authenticateAndSearch() {
       console.error('認証エラー:', chrome.runtime.lastError);
       return;
     }
-    searchVideos(token, apiKey);
+    searchVideos(token, YoutubeApiKey);
   })
 }
 
