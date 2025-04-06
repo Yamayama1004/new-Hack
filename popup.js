@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.local.get(["ghostsEnabled"], data => {
       toggleButton.textContent = data.ghostsEnabled ? "OFF" : "ON";
     });
-  
     toggleButton.addEventListener("click", () => {
       chrome.storage.local.get(["ghostsEnabled"], data => {
         const newStatus = !data.ghostsEnabled;
