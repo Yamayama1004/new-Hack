@@ -1,14 +1,7 @@
 const searchTerm = "作業用BGM";
 let youtubeUrl = null;
-let apiKey = null;
+let apiKey = "AIzaSyAvYJppug132sbTgz4o6Zzf8kg5Iph9p7E";
 let startFlag = false;
-
-fetch('./.env')
-  .then(response => response.json())
-  .then(config => {
-    apiKey = youtubeApiKey;
-  });
-
 
 function authenticateAndSearch() {
   chrome.identity.getAuthToken({ interactive: true }, function (token) {
