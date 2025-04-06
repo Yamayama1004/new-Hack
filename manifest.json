@@ -6,5 +6,13 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab","tabs","identity"],
+  "background":{
+    "service_worker": "background.js"
+  },
+  "oauth2":{
+    "client_id":"902349339610-ka3j3ubo5usr03qa6m5m740s2a2f7t6t.apps.googleusercontent.com",
+    "scopes":["https://www.googleapis.com/auth/youtube.readonly"
+    ]
+  }
 }
